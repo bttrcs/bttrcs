@@ -1,7 +1,7 @@
 - 👋 Hi, I’m @bttrcs
-- 👀 I’m interested in cooking, shooting, gaming, cars etc
+- 👀 I’m interested in cooking, shooting, gaming, cars and developing websites
 - 🌱 I’m currently learning something not usefull
-- 📫 How to reach me bttr.website / bttr.bttr@bttr.website
+- 📫 How to reach me bttr.website / bttr@bttr.website
 - 😄 Pronouns: king/lord
 - ⚡ Fun fact:  rats and horses cannot vomit.
 
