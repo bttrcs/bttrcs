@@ -1,0 +1,78 @@
+#include <iostream>
+#include <random>
+using namespace std;
+
+
+
+int rand_int(int low, int high)
+{
+    static std::default_random_engine re{ std::random_device{}() };
+    using Dist = std::uniform_int_distribution<int>;
+    static Dist uid{};
+    return uid(re, Dist::param_type{ low,high });
+}
+
+void cases() {
+    int WeaponCase[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int MilSpec[] = { 0, 1, 2 };
+    int Restricted[] = { 3, 4, 5 };
+    int Classified[] = { 6, 7 };
+    int Covert[] = { 8 };
+    int Rare[] = { 9 };
+    
+    // 320, 64, 12, 3, 1
+
+}
+void random_item() {
+    int randomItem = rand_int(1, 400);
+    if (randomItem > 0 && randomItem < 321) {
+        cout << "Milspec\n";
+    }
+    else if (randomItem > 320 && randomItem < 385) {
+        cout << "Restricted\n";
+    }
+    else if (randomItem > 384 && randomItem < 397) {
+        cout << "Classified\n";
+    }
+    else if (randomItem > 396 && randomItem < 400) {
+        cout << "Covert\n";
+    }
+    else {
+        cout << "RARE SPECIAL ITEM !!!!\n";
+    }
+}
+void credits(int& credit) {
+    cout << credit;
+    string userText;
+    int howMuch;
+    cin >> userText >> howMuch;
+
+    if (userText == "add" || userText == "ADD" || userText == "Add") {
+        credit += howMuch;
+        cout << "Added " << howMuch << " to your balance. New balance: " << credit << "\n";
+    }
+    else {
+        cout << "Wrong syntax, try: add [amount]\n";
+    }
+}
+
+void play(int& credit) {
+    string Use;
+    cout << "'Balance' to check your balance or \n'case' to open a case\n";
+    cin >> Use;
+
+    if (Use == "Balance") {
+        credits(credit);
+    }
+    else if (Use == "Case") {
+        random_item();
+    }
+    else {
+        cout << "Wrong syntax, try: \n'Balance' to check your balance or \n'case' to open a case\n";
+    }
+}
+
+int main() {
+    int credit = 100;
+    play(credit);
+}
